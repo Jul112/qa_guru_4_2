@@ -1,0 +1,16 @@
+//Какие плагины здесь будут работать
+plugins {
+    id 'java-library'
+}
+//загружать зависимости из:
+repositories {
+    mavenCentral()
+}
+//зависимости
+dependencies {
+
+}
+// Task для запуска
+test {
+    useJUnitPlatform()
+}
