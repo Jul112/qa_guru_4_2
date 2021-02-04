@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,10 @@ public class TextBoxTests {
     void dataAppearsInOutputBlockTest() {
         //arrange = given = подготовка
         open("https://demoqa.com/text-box");
-        $(".main-header").shouldHave(text("Text Box"));// проверяем, что страница открылась (class ="main-header")
+
+        //$(".main-header").shouldHave(text("Text Box")); проверяем, что страница открылась (class ="main-header")
+        SelenideElement mainHeader = $(".main-header");
+        mainHeader.shouldHave(text("Text Box"));
 
         //act = when = действие
         $("#userName").setValue("Jul"); //id="userName"
